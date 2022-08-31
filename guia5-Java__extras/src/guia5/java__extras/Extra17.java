@@ -13,6 +13,8 @@ El primer número primo es 2, y hay 25 números primos entre 1 y 100, ellos son:
  */
 package guia5.java__extras;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hered
@@ -20,7 +22,39 @@ package guia5.java__extras;
 public class Extra17 {
 
     public static void main(String[] args) {
+        boolean resultado;
+        int numeroIngresado;
+        Scanner sc = new Scanner(System.in);
         
+        
+        System.out.println("Ingrese un numero");
+        numeroIngresado = sc.nextInt();
+        
+        resultado = ValidarNumeroPrimo(numeroIngresado);
+        System.out.println("El número ingresado es primo: " + resultado);
+
     }
+    
+    
+    public static boolean ValidarNumeroPrimo(int numero){
+        boolean resultado = false;
+        int contador = 0;
+        
+        for(int i=1; i<=numero; i++){
+            if((numero % i) == 0){
+                contador++;
+            }
+            if(contador > 2){
+                break;
+            }
+        }
+        if(contador == 2){
+            resultado = true;
+        }
+        
+        return resultado;
+    }
+        
+    
     
 }

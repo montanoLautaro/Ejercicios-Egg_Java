@@ -5,36 +5,22 @@
  */
 package mascotapp;
 
-import java.util.Scanner;
 import mascotapp.entidades.Mascota;
+import mascotapp.servicios.ServicioMascota;
 
 
 public class MascotAPP {
 
     public static void main(String[] args) {
-        Mascota m1;
-        Scanner sc = new Scanner(System.in);
+        ServicioMascota sm = new ServicioMascota();
         
-//        m1.nombre = "Perrito Moe";
-//        m1.apodo = sc.nextLine();
-//        m1.tipo = "Perro";
-//        m1.edad = 10;
-//        m1.raza = "Caniche";
-//        m1.cola = true;
-//        m1.color = "Blanco";
-
-        //lo mas optimo es asignarlo directamente a los constructores
+        Mascota m1 = sm.crearMascota();
+ 
+        System.out.println(m1.toString());
         
-        m1 = new Mascota("Perrito Moe", sc.next(), "Perro", 10, true, "Caniche");
-        
-        // si yo no especifico el valor de una variable y es de tipo primitivo
-        // se le asignan valores por defecto
-        
-        System.out.println(m1.apodo + " " + m1.edad + " " + m1.tipo );
-        System.out.println(m1.color); // string por defecto es null
-        
-        
-        
+        //cuando dejamos de utilizar el objeto, lo eliminamos para no 
+        //seguir ocupando memoria innecesariamente
+        m1 = null;
     }
 
 }

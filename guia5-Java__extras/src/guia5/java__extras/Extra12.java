@@ -27,26 +27,46 @@ public class Extra12 {
         cadenaB = "0";
         cadenaC = "0";
 
-        for (contadorA = 0; contadorA < 11; contadorA++) {
+//        for (contadorA = 0; contadorA < 11; contadorA++) {
+//            for (contadorB = 0; contadorB < 10; contadorB++) {
+//                cadenaB = String.valueOf(contadorB);
+//
+//                for (contadorC = 0; contadorC < 10; contadorC++) {
+//                    cadenaC = String.valueOf(contadorC);
+//                    if (cadenaC.equals("3")) {
+//                        cadenaC = "E";
+//                    }
+//                    if (cadenaB.equals("3")) {
+//                        cadenaB = "E";
+//                    }
+//                    if (cadenaA.equals("3")) {
+//                        cadenaA = "E";
+//                    }
+//                    System.out.println("(" + cadenaA + "-" + cadenaB + "-" + cadenaC + ")");
+//                }
+//
+//            }
+//            cadenaA = String.valueOf(contadorA);
+//        }
+        for (contadorA = 0; contadorA < 10; contadorA++) {
+            cadenaA = String.valueOf(contadorA);
+            if (cadenaA.equals("3")) {
+                cadenaA = "E";
+            }
             for (contadorB = 0; contadorB < 10; contadorB++) {
                 cadenaB = String.valueOf(contadorB);
-
+                if (cadenaB.equals("3")) {
+                    cadenaB = "E";
+                }
                 for (contadorC = 0; contadorC < 10; contadorC++) {
                     cadenaC = String.valueOf(contadorC);
                     if (cadenaC.equals("3")) {
                         cadenaC = "E";
                     }
-                    if (cadenaB.equals("3")) {
-                        cadenaB = "E";
-                    }
-                    if (cadenaA.equals("3")) {
-                        cadenaA = "E";
-                    }
                     System.out.println("(" + cadenaA + "-" + cadenaB + "-" + cadenaC + ")");
                 }
 
             }
-            cadenaA = String.valueOf(contadorA);
 
         }
 
