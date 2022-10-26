@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="relacionesclases.ej02.entidades">
+  <ClassDiagramComponents>
+    <Class name="Juego" package="relacionesclases.ej02.entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="listaJugadores" type="List&lt;Jugador&gt;" visibility="private"/>
+        <Field name="revolver" type="Revolver" visibility="private"/>
+        <Field name="ronda" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="llenarJuego" returnType="void" visibility="public">
+          <Argument type="List&lt;Jugador&gt;" name="listaJugadores"/>
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+        <Method name="ronda" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="relacionesclases.ej02.entidades" visibility="public" xPosition="360.0" yPosition="385.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mojado" type="boolean" visibility="private"/>
+        <Field name="numeroJugadores" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="isMojado" returnType="boolean" visibility="public"/>
+        <Method name="setMojado" returnType="void" visibility="public">
+          <Argument type="boolean" name="mojado"/>
+        </Method>
+        <Method name="getNumeroJugadores" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="setNumeroJugadores" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="numeroJugadores"/>
+        </Method>
+        <Method name="disparo" returnType="boolean" visibility="public">
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Revolver" package="relacionesclases.ej02.entidades" visibility="public" xPosition="755.0" yPosition="-2.0">
+      <Fields>
+        <Field name="posicionActual" type="int" visibility="private"/>
+        <Field name="posicionAgua" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPosicionActual" returnType="int" visibility="public"/>
+        <Method name="setPosicionActual" returnType="void" visibility="public">
+          <Argument type="int" name="posicionActual"/>
+        </Method>
+        <Method name="getPosicionAgua" returnType="int" visibility="public"/>
+        <Method name="setPosicionAgua" returnType="void" visibility="public">
+          <Argument type="int" name="posicionAgua"/>
+        </Method>
+        <Method name="llenarRevolver" returnType="void" visibility="public"/>
+        <Method name="mojar" returnType="boolean" visibility="public"/>
+        <Method name="siguienteChorro" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="juego" source="relacionesclases.ej02.entidades.Juego" target="relacionesclases.ej02.entidades.Jugador" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="juegoRevolver" source="relacionesclases.ej02.entidades.Juego" target="relacionesclases.ej02.entidades.Revolver" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
